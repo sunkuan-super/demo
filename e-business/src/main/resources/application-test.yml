@@ -1,0 +1,68 @@
+server:
+  port: 8088
+  tomcat:
+    uri-encoding: UTF-8
+    basedir: tomcat
+logging:
+  file: d://test.log
+  level:
+    root: info
+
+spring:
+  application:
+    name: rabbitmq-springboot
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: sunkuan
+    password: 123456
+    virtual-host: vhost_sms
+
+#简单配置
+name: lisi
+
+# 配置对象
+student:
+  id: 1
+  name: zhangsan
+  age: 18
+
+# 数组配置
+citys1:
+  - beijing
+  - shanghai
+  - tianjin
+  - chongqing
+
+# 数组行表现形式
+citys2:
+  city:
+    [beijing,shanghai,chongqing,tianjin]
+
+# 对象数组配置
+person:
+  persons1:
+    - id: 1
+      name: zhangsan
+      age: 18
+    - id: 2
+      name: wangwu
+      age: 19
+    - id: 3
+      name: zhaoliu
+      age: 20
+
+# 对象数组行表现形式
+persons2: [{id: 1,name: zhangsan,age: 18},{id: 2,name: lisi,age: 19},{id: 3,name: zhaoliu,age:20}]
+
+# MAP
+map:
+  key1: value1
+  key2: value2
+
+
+
+
+
+
+
