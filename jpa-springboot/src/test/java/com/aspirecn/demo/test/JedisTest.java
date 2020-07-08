@@ -163,8 +163,13 @@ public class JedisTest {
     public void testJedisPool() {
 
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
+        // 资源池最大连接数
         jedisPoolConfig.setMaxTotal(50);
+        // 连接池中最多可空闲maxIdle个连接 ，这里取值为10，表示即使没有redis连接时依然可以保持20空闲的连接，而不被清除，随时处于待命状
+        // 资源池允许最大空闲连接数
         jedisPoolConfig.setMaxIdle(10);
+        // 资源池确保最少空闲连接数
+        jedisPoolConfig.setMinIdle(2);
         //1.获取连接
         JedisPool jedisPool = new JedisPool(jedisPoolConfig,"localhost");
 
