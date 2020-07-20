@@ -129,6 +129,7 @@ public class CollectDemo {
                 .collect(Collectors.groupingBy(Employee::getAge));
 
         System.out.println(map);
+
     }
 
     @Test

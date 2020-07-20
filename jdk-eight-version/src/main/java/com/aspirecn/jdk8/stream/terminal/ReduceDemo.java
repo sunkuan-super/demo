@@ -3,6 +3,7 @@ package com.aspirecn.jdk8.stream.terminal;
 import com.aspirecn.jdk8.method_ref.Employee;
 import lombok.NonNull;
 import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -25,8 +26,8 @@ public class ReduceDemo {
     );
 
     @Test
-    public void reduce(){
-        List<Integer> integerList = Arrays.asList(1,2,3,45,6,7,8,9,87);
+    public void reduce() {
+        List<Integer> integerList = Arrays.asList(1, 2, 3, 45, 6, 7, 8, 9, 87);
         Integer reduce = integerList.stream()
                 .reduce(0, (x, y) -> x + y);
 
@@ -35,7 +36,7 @@ public class ReduceDemo {
     }
 
     @Test
-    public void reduceEmployee(){
+    public void reduceEmployee() {
         @NonNull Integer reduce = employeeList.stream()
                 .map(Employee::getAge)
                 .reduce(0, (x, y) -> x + y);
