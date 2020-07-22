@@ -19,27 +19,49 @@ object CreateDatasetDemo {
     val spark = SparkSession.builder().
       config(conf).
       getOrCreate()
-
+    //设置日志级别
     spark.sparkContext.setLogLevel("WARN")
 
-    // 创建dataset方式一
+    /**
+     * 创建dataset方式一,由range创建
+     */
     val ds = spark.range(1, 10)
     ds.show()
+    ds.filter("id > 5").show()
 
-
-    // 创建dataset方式二： 通过case class
-    val seq = List(Person("Jack", 28, 184), Person("Tom", 10, 144), Person("Andy", 16, 165))
     import spark.implicits._
-    val ds2 = spark.createDataset(seq)
-    ds2.show()
+    ds.filter($"id" > 5).show
+    ds.filter('id > 5).show() //转义
+    ds.where('id < 3).show()
+    ds.orderBy($"id" desc).show() //排序
+    ds.describe("id").show() //统计信息
 
-    // 创建dataset方式三：读文件
+    /**
+     * 创建dataset方式二： 由集合创建
+     */
+    val lst = List(Person("Jack", 28, 184), Person("Tom", 10, 144), Person("Andy", 16, 165))
+    spark.createDataset(lst).show()
+    val seq = Seq(("Jack", 28, 184), ("Tom", 10, 144), ("Andy", 16, 165))
+    spark.createDataset(seq).show()
+
+    /**
+     * 创建dataset方式三：读文件
+     */
     val df = spark.read.
       option("header", true). //设置文件头
       option("inferschema", true). //设置自动类型推断
       option("delimit", ","). //指定分隔符(缺省是逗号 )
-      csv("d://aa.txt")
+      csv("spark/file/aa.txt")
     df.show()
+
+    /**
+     * 集合转成DataFrame,并修改列名
+     */
+    val df2 = spark.createDataset(seq).withColumnRenamed("_1","name").
+      withColumnRenamed("_2","age").withColumnRenamed("_3","height")
+    df2.show()
+
+    spark.createDataFrame(seq).toDF("c1","c2","c3").show()
     //
     //    df.show()
     //    spark.stop()
