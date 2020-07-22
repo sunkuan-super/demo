@@ -17,7 +17,7 @@ object SparkSQLDemo {
 
     ssc.appName(this.getClass.getCanonicalName)
       .config(conf)
-      .enableHiveSupport()  //有了这句就可以访问hive了
+//      .enableHiveSupport()  //有了这句就可以访问hive了
       .getOrCreate()
 
 

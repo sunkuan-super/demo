@@ -27,5 +27,7 @@ object RowDemo {
     println(row1.getAs[Int](0))
     println(row1.getAs[String](1))
     println(row1.getAs[Double](2))
+
+
   }
 }

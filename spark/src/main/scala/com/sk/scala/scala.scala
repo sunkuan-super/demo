@@ -8,5 +8,7 @@ package com.sk.scala
  * @Date: 2020/7/20 - 12:03
  */
 object scala {
-
+  def main(args: Array[String]): Unit = {
+    print("haha")
+  }
 }
