@@ -19,10 +19,12 @@ object RowDemo {
     println(row1(0))
     println(row1(1))
     println(row1(2))
+    println("===============================================")
 
     println(row1.getInt(0))
     println(row1.getString(1))
     println(row1.getDouble(2))
+    println("===============================================")
 
     println(row1.getAs[Int](0))
     println(row1.getAs[String](1))
