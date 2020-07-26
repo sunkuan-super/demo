@@ -22,11 +22,8 @@ object DF2DS {
     df1.show()
     println("----------------------")
     val df2: DataFrame = rdd.toDF("name", "age", "height")
-    println("----------------------")
     val ds: Dataset[Person] = df2.as[Person]
     ds.show()
-
-    spark.sql("")
 
     spark.stop()
 

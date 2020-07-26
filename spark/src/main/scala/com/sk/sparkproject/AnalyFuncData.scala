@@ -24,7 +24,8 @@ object AnalyFuncData {
       option("inferschema", true).
       csv("spark/file/analyfuncdata.csv")
 
-    df.createTempView("t1")
+
+    df.createOrReplaceTempView("t1")
 
     /**
      * 求和用的分析函数
@@ -54,8 +55,54 @@ object AnalyFuncData {
     // 合计值、累计值
 
     /**
-     * 随机拆分
+     * 随机拆分  ntile(4)拆分成4份，ntile(3)拆分成3份
      */
-    
+    spark.sql(
+      """
+        |select cookieid, createtime, pv,
+        |row_number() over (partition by cookieid order by pv desc) as row_number,
+        |ntile(4) over (partition by cookieid order by pv desc) as ntile4,
+        |ntile(3) over (partition by cookieid order by pv desc) as ntile3,
+        |ntile(2) over (partition by cookieid order by pv desc) as ntile2
+        |from t1
+        |""".stripMargin).show()
+
+
+    /**
+     * 行函数，移动2下  lag,lead不支持窗口子句
+     */
+    spark.sql(
+      """
+        |select cookieid, createtime, pv,
+        |lag(pv,2) over (partition by cookieid order by createtime) as p1,
+        |lag(pv,-2) over (partition by cookieid order by createtime) as p2
+        |from t1
+        |""".stripMargin).show()
+
+    /**
+     * first_value 截至当前行的第一行,last_value截至当前行的最后一行
+     */
+    spark.sql(
+      """
+        |select cookieid, createtime, pv,
+        |first_value(createtime) over (partition by cookieid order by createtime) as firstcreatetime,
+        |first_value(pv) over (partition by cookieid order by createtime) as firstpv,
+        |last_value(createtime) over (partition by cookieid order by createtime) as lastcreatetime,
+        |last_value(pv) over (partition by cookieid order by createtime) as lastpv
+        |from t1
+        |""".stripMargin).show()
+
+    spark.sql(
+      """
+        |select cookieid, createtime, pv,
+        |first_value(createtime) over (partition by cookieid order by createtime) as firstcreatetime,
+        |first_value(pv) over (partition by cookieid order by createtime) as firstpv,
+        |last_value(createtime) over (partition by cookieid order by createtime) as lastcreatetime,
+        |last_value(pv) over (partition by cookieid order by createtime) as lastpv
+        |from t1
+        |""".stripMargin).show()
+
+
+
   }
 }
