@@ -17,11 +17,14 @@ import org.apache.hadoop.hbase.util.Bytes
 object HBaseHelloWorld {
 
   def getConn(): Connection = {
-    KerberosInit.initKerberosHBase()
+    //KerberosInit.initKerberosHBase()
     // 获取配置、创建连接
     val hBaseConf = HBaseConfiguration.create()
+    println(1)
     println(s"HBaseConf = $hBaseConf")
+    println(2)
     val conn = ConnectionFactory.createConnection(hBaseConf)
+    println(3)
     println(conn)
     conn
   }
@@ -30,7 +33,7 @@ object HBaseHelloWorld {
    * 获取原始数据
    */
   def getNoDealData(): Unit = {
-    val tableName = "sms2019:offsets"
+    val tableName = "kafka_offset"
     val conn = getConn()
 
     val table: Table = conn.getTable(TableName.valueOf(tableName))
