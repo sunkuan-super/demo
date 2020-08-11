@@ -16,7 +16,7 @@ spring:
     port: 5672
     username: sunkuan
     password: 123456
-    virtual-host: vhost_sms
+    virtual-host: /vhost_s
 
 #简单配置
 name: lisi
