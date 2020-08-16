@@ -17,7 +17,6 @@ object KafkaReceiver5 {
     val topics = Map(("teacher" -> 1))
 
     val lines = KafkaUtils.createStream(ssc, zkQuorum, groupId, topics).map(_._2)
-
     lines.foreachRDD((rdd,time) => {
       if(!rdd.isEmpty()){
         println(s"rdd.count() = ${rdd.count()}")
