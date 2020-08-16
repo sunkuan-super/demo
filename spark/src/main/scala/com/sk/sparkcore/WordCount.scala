@@ -1,5 +1,6 @@
 package com.sk.sparkcore
 
+import com.sk.Utils
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -12,18 +13,16 @@ import org.apache.spark.{SparkConf, SparkContext}
  */
 object WordCount {
   def main(args: Array[String]): Unit = {
-    val arr = Array("zhangsan","lisi","wangwu","zhangsan","zhangsan","lisi","wangwu","zhangsan")
-    val result = arr.groupBy(x => x).map(x => (x._1,x._2.length))
+    Utils.initKerberos()
+    val arr = Array("zhangsan", "lisi", "wangwu", "zhangsan", "zhangsan", "lisi", "wangwu", "zhangsan")
+    val result = arr.groupBy(x => x).map(x => (x._1, x._2.length))
     println(result)
 
-    val conf = new SparkConf().setMaster("local").setAppName(this.getClass.getCanonicalName)
+    val conf = new SparkConf().setMaster("spark://bj-hw-8f-18-162:7077").setAppName(this.getClass.getCanonicalName.take(this.getClass.getCanonicalName.length - 1))
     val sc = new SparkContext(conf)
-
+    sc.addJar("D:\\IdeaProjects\\demo\\spark\\target\\spark-1.0-SNAPSHOT.jar")
     sc.setLogLevel("WARN")
-    val rdd:RDD[Int] = sc.makeRDD(1 to 10).union(sc.makeRDD(1 to 10))
-    rdd.map((_,1)).reduceByKey(_+_).collect().foreach(println)
-
-
-
+    val rdd: RDD[Int] = sc.makeRDD(1 to 10).union(sc.makeRDD(1 to 10))
+    rdd.map((_, 1)).reduceByKey(_ + _).collect().foreach(println)
   }
 }

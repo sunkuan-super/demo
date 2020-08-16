@@ -1,4 +1,4 @@
-package com.sk.sparksql.db
+package com.sk.sparksql.datasource
 
 import org.apache.spark.sql.SparkSession
 
@@ -24,8 +24,8 @@ object ReadFromMySQL {
       .option("user","root")
       .option("password","123456").load()
 
+    jdbcDF.select("id","name").show()
     jdbcDF.show()
-
     jdbcDF.printSchema
 
     spark.stop()

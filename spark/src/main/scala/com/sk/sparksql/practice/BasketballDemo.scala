@@ -28,5 +28,7 @@ object BasketballDemo {
         |select team,y,lag(y) over (partition by team order by y) as y1
         |from t
         |""".stripMargin).show()
+
+    spark.stop()
   }
 }
