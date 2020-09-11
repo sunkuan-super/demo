@@ -1,11 +1,15 @@
 package com.sk.hbase
 
+import com.sk.hdfs.KerberosInit
 import org.apache.hadoop.hbase.{HBaseConfiguration, HColumnDescriptor, HTableDescriptor, TableName}
-import org.apache.hadoop.hbase.client.{Connection, ConnectionFactory, Put, Scan, Table}
+import org.apache.hadoop.hbase.client.{Connection, ConnectionFactory, HTable, Put, Scan, Table}
 import org.apache.hadoop.hbase.util.Bytes
+import scala.collection.JavaConversions._
+import scala.util.control.Breaks._
 
 object HBaseReadAndWrite {
   def main(args: Array[String]): Unit = {
+    KerberosInit.initKerberosHBase()
     // 1、获取配置、创建连接、表模式管理器
     val hbaseConf = HBaseConfiguration.create()
     println(hbaseConf)
@@ -19,6 +23,7 @@ object HBaseReadAndWrite {
       println("表已经存在")
       admin.disableTable(tableName)
       admin.deleteTable(tableName)
+      println("表删除成功")
       //admin.truncateTable(tableName,false)
     }
 
@@ -51,13 +56,13 @@ object HBaseReadAndWrite {
     put1.addColumn(family, "5".getBytes, "999999".getBytes())
 
     table.put(put1)
-    println("succ")
+    println("success")
 
-    read(table,family,conn)
+    read(table, family, conn)
 
   }
 
-  def read(tableOffsets: Table, family: Array[Byte],conn:Connection): Unit = {
+  def read(tableOffsets: Table, family: Array[Byte], conn: Connection): Unit = {
     val startRowKey = "myoffset0::999999999"
     val endRowKey = "myoffset0::0"
 
@@ -65,24 +70,57 @@ object HBaseReadAndWrite {
     val scanner = tableOffsets.getScanner(
       scan.withStartRow(startRowKey.getBytes()).withStopRow(endRowKey.getBytes()).setReversed(true))
 
-    val result = scanner.next()
-    val cellsSize = result.listCells().size()
-    println(s"result.listCells().size() = ${cellsSize}")
+    /*if(scanner != null) {
+      scanner.foreach(result => {
+        var limitInd = 0;
+        breakable{
+          for (i <- result.getRow.indices){
+            val rowkey = result.getRow
+            if(rowkey(i) == ':'){
+              limitInd = i
+              break()
+            }
+          }
+        }
 
-    val n1 = result.getValue(family, "0".getBytes())
-    val n2 = result.getValue(family, "1".getBytes())
-    val n3 = result.getValue(family, "2".getBytes())
-    val n4 = result.getValue(family, "3".getBytes())
-    val n5 = result.getValue(family, "4".getBytes())
-    val n6 = result.getValue(family, "5".getBytes())
+        println(limitInd)
+      })
+    }*/
+    scanner.foreach(result =>{
+      val cellsSize = result.listCells().size()
+      println(s"result.listCells().size() = ${cellsSize}")
 
-    println(s"n1 = $n1")
-    println(s"n6 = $n6")
-    println(s"n1 = ${n1.mkString("^")}")
-    println(s"n1 = ${Bytes.toString(n1)}")
-    println(s"n6 = ${Bytes.toString(n6)}")
+      val n1 = result.getValue(family, "0".getBytes())
+      val n2 = result.getValue(family, "1".getBytes())
+      val n3 = result.getValue(family, "2".getBytes())
+      val n4 = result.getValue(family, "3".getBytes())
+      val n5 = result.getValue(family, "4".getBytes())
+      val n6 = result.getValue(family, "5".getBytes())
+
+      println(s"n1 = $n1")
+      println(s"n6 = $n6")
+      println(s"n1 = ${n1.mkString("^")}")
+      println(s"n1 = ${Bytes.toString(n1)}")
+      println(s"n6 = ${Bytes.toString(n6)}")
+    })
+//    val result = scanner.next()
+//
+//    val cellsSize = result.listCells().size()
+//    println(s"result.listCells().size() = ${cellsSize}")
+//
+//    val n1 = result.getValue(family, "0".getBytes())
+//    val n2 = result.getValue(family, "1".getBytes())
+//    val n3 = result.getValue(family, "2".getBytes())
+//    val n4 = result.getValue(family, "3".getBytes())
+//    val n5 = result.getValue(family, "4".getBytes())
+//    val n6 = result.getValue(family, "5".getBytes())
+//
+//    println(s"n1 = $n1")
+//    println(s"n6 = $n6")
+//    println(s"n1 = ${n1.mkString("^")}")
+//    println(s"n1 = ${Bytes.toString(n1)}")
+//    println(s"n6 = ${Bytes.toString(n6)}")
 
     conn.close()
-
   }
 }
