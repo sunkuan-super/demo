@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @Title: PersonConfig
- * @Package: com.aspirecn.sk.config
+ * @Package: com.practice.sk.config
  * @Description:
  * @Author: sunkuan
  * @Date: 2020/6/22 - 13:48

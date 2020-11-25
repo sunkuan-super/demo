@@ -8,7 +8,7 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * @Title: FairConsum
- * @Package: com.aspirecn.sk.rabbitmq.simplequeue
+ * @Package: com.practice.sk.rabbitmq.simplequeue
  * @Description:
  * @Author: sunkuan
  * @Date: 2020/6/15 - 15:08

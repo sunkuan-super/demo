@@ -6,7 +6,7 @@ import java.util.Map;
 
 /**
  * @Title: LinkedHashMapDemo
- * @Package: com.aspirecn.sk.datastruct
+ * @Package: com.practice.sk.datastruct
  * @Description:
  * @Author: sunkuan
  * @Date: 2020/8/24 - 14:51

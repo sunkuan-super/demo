@@ -7,8 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * @Title: com.aspirecn.sk.LoggerTest
- * @Package: com.aspirecn.sk
+ * @Title: com.practice.sk.LoggerTest
+ * @Package: com.practice.sk
  * @Description:
  * @Author: sunkuan
  * @Date: 2020/6/11 - 17:14

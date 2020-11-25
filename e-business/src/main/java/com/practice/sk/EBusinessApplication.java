@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * @Title: com.aspirecn.sk.EBusinessApplication
+ * @Title: com.practice.sk.EBusinessApplication
  * @Package: PACKAGE_NAME
  * @Description:
  * @Author: sunkuan

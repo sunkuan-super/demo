@@ -10,7 +10,7 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * @Title: Send
- * @Package: com.aspirecn.sk.rabbitmq.ps
+ * @Package: com.practice.sk.rabbitmq.ps
  * @Description:
  * @Author: sunkuan
  * @Date: 2020/6/17 - 11:01

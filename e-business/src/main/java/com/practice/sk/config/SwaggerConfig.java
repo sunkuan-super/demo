@@ -24,7 +24,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
-        Contact contact = new Contact("孙宽", "http:localhost:80", "sunkuan@aspirecn.com");
+        Contact contact = new Contact("zhangsan", "http:localhost:80", "123@163.com");
         return new ApiInfoBuilder()
                 .title("招行重构项目——数据报表模块构建RESTful API")
                 .description("招行重构-数据报表")
@@ -40,7 +40,7 @@ public class SwaggerConfig {
                 .groupName("前端--报表统计--接口")
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.aspirecn.sk.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.practice.sk.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

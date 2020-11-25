@@ -8,7 +8,7 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * @Title: ConsumerConfirm1
- * @Package: com.aspirecn.sk.rabbitmq.confirm
+ * @Package: com.practice.sk.rabbitmq.confirm
  * @Description:
  * @Author: sunkuan
  * @Date: 2020/6/17 - 14:25

@@ -2,7 +2,7 @@ package com.practice.sk.datastruct;
 
 /**
  * @Title: SingleListDemo
- * @Package: com.aspirecn.sk.datastruct
+ * @Package: com.practice.sk.datastruct
  * @Description:
  * @Author: sunkuan
  * @Date: 2020/8/24 - 13:20

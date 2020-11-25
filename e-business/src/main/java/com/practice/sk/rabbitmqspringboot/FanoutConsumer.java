@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @Title: FanoutConsumer
- * @Package: com.aspirecn.sk.rabbitmq_springboot
+ * @Package: com.practice.sk.rabbitmq_springboot
  * @Description:
  * @Author: sunkuan
  * @Date: 2020/6/18 - 10:51

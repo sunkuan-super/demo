@@ -8,7 +8,7 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * @Title: TxConsumer
- * @Package: com.aspirecn.sk.rabbitmq.tx
+ * @Package: com.practice.sk.rabbitmq.tx
  * @Description:
  * @Author: sunkuan
  * @Date: 2020/6/17 - 13:44

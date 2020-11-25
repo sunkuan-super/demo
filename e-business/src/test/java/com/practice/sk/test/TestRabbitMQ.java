@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @Title: TestRabbitMQ
- * @Package: com.aspirecn.sk.test
+ * @Package: com.practice.sk.test
  * @Description:
  * @Author: sunkuan
  * @Date: 2020/6/17 - 17:24

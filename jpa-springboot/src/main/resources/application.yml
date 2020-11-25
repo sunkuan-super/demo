@@ -17,9 +17,9 @@ spring:
     port: 6379
 #  redis:
 #    cluster:
-#      nodes: 192.168.19.204:7000,192.168.19.204:7001,192.168.19.204:7002,192.168.19.204:8000,192.168.19.204:8001,192.168.19.204:8002
+#      nodes: 127.0.0.1:7000,192.168.19.88:7001
 #      max-redirects: 6
-#    password: abcde
+#    password: aaaaaaaaaaaaaaaa
 #    lettuce:
 #      pool:
 #        max-active: 8

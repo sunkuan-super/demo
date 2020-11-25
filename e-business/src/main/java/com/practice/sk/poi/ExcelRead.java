@@ -1,6 +1,5 @@
 package com.practice.sk.poi;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -14,7 +13,7 @@ import java.util.Date;
 
 /**
  * @Title: ExcelRead
- * @Package: com.aspirecn.sk.poi
+ * @Package: com.practice.sk.poi
  * @Description:
  * @Author: sunkuan
  * @Date: 2020/6/12 - 11:59
@@ -52,7 +51,7 @@ public class ExcelRead {
 
     public void testExcelRead2() throws IOException {
         // workbook
-        FileInputStream fileInputStream = new FileInputStream("C:\\Users\\sunkuan\\Desktop\\Aspire\\项目\\5G端到端天馈智能优化\\广东\\深圳\\5G公参 广东Massive MIMO权值优化项目地市需求文档V2 - 副本.xlsx");
+        FileInputStream fileInputStream = new FileInputStream("C:\\test.xlsx");
         Workbook workbook = new XSSFWorkbook(fileInputStream);
         // 读取一个sheet
         Sheet sheet = workbook.getSheetAt(0);

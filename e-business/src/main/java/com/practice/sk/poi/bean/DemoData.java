@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  * @Title: DemoData
- * @Package: com.aspirecn.sk.poi.bean
+ * @Package: com.practice.sk.poi.bean
  * @Description:
  * @Author: sunkuan
  * @Date: 2020/6/14 - 0:54

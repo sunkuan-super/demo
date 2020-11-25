@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * @Title: PersonsConfig
- * @Package: com.aspirecn.sk.config
+ * @Package: com.practice.sk.config
  * @Description:
  * @Author: sunkuan
  * @Date: 2020/6/22 - 17:36

@@ -13,7 +13,7 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * @Title: SendConfirmAsync
- * @Package: com.aspirecn.sk.rabbitmq.confirm
+ * @Package: com.practice.sk.rabbitmq.confirm
  * @Description:
  * @Author: sunkuan
  * @Date: 2020/6/17 - 15:15

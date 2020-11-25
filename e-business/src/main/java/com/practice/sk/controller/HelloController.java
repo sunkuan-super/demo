@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * @Title: HelloController
- * @Package: com.aspirecn.sk.controller
+ * @Package: com.practice.sk.controller
  * @Description:
  * @Author: sunkuan
  * @Date: 2020/6/22 - 11:23

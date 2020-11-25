@@ -9,7 +9,7 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * @Title: Send1
- * @Package: com.aspirecn.sk.rabbitmq.confirm
+ * @Package: com.practice.sk.rabbitmq.confirm
  * @Description: 普通模式
  * @Author: sunkuan
  * @Date: 2020/6/17 - 14:10

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @Title: TopicConsumer
- * @Package: com.aspirecn.sk.rabbitmqspringboot
+ * @Package: com.practice.sk.rabbitmqspringboot
  * @Description:
  * @Author: sunkuan
  * @Date: 2020/6/18 - 13:50

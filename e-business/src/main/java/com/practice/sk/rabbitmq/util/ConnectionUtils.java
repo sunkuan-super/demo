@@ -8,7 +8,7 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * @Title: ConnectionUtils
- * @Package: com.aspirecn.sk.rabbitmq.util
+ * @Package: com.practice.sk.rabbitmq.util
  * @Description:
  * @Author: sunkuan
  * @Date: 2020/6/15 - 13:34

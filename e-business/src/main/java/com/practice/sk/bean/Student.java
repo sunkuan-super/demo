@@ -1,12 +1,10 @@
 package com.practice.sk.bean;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * @Title: Person
- * @Package: com.aspirecn.sk
+ * @Package: com.practice.sk
  * @Description:
  * @Author: sunkuan
  * @Date: 2020/6/22 - 13:52

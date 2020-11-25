@@ -2,7 +2,7 @@ package com.practice.sk.datastruct;
 
 /**
  * @Title: Node
- * @Package: com.aspirecn.sk.datastruct
+ * @Package: com.practice.sk.datastruct
  * @Description:
  * @Author: sunkuan
  * @Date: 2020/8/24 - 12:47
