@@ -18,7 +18,7 @@ object WordCount {
     val result = arr.groupBy(x => x).map(x => (x._1, x._2.length))
     println(result)
 
-    val conf = new SparkConf().setMaster("spark://bj-hw-8f-18-162:7077").setAppName(this.getClass.getCanonicalName.take(this.getClass.getCanonicalName.length - 1))
+    val conf = new SparkConf().setMaster("spark://sklocal:7077").setAppName(this.getClass.getCanonicalName.take(this.getClass.getCanonicalName.length - 1))
     val sc = new SparkContext(conf)
     sc.addJar("D:\\IdeaProjects\\demo\\spark\\target\\spark-1.0-SNAPSHOT.jar")
     sc.setLogLevel("WARN")

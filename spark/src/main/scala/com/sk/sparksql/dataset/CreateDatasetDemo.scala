@@ -67,7 +67,7 @@ object CreateDatasetDemo {
     //    spark.stop()
     //
     //    import spark.implicits._
-    //    val df2 = spark.read.options(Map("header" ->true,"inferschema" -> true,"delimit" -> true)).csv("file:///home/aspire/aa.txt")
+    //    val df2 = spark.read.options(Map("header" ->true,"inferschema" -> true,"delimit" -> true)).csv("file:///home/sk/aa.txt")
 
   }
 }
