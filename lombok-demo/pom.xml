@@ -15,7 +15,7 @@
 	<groupId>com.sk.lombok</groupId>
 	<artifactId>lombok-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
+	<name>lombok-demo</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

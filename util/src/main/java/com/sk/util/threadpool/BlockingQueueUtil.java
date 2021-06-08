@@ -17,8 +17,9 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class BlockingQueueUtil {
     public static void main(String[] args) throws InterruptedException {
-        BlockingQueue<ExportTask> queue = new LinkedBlockingQueue<>(10);
-        ExportTask exportTask = new ExportTask(1001L, "20200102-20200208", "20200110", "20200110", 2);
+        BlockingQueue<ExportTask> queue = new LinkedBlockingQueue<ExportTask>(10);
+//        ExportTask exportTask = new ExportTask(1001L, "20200102-20200208", "20200110", "20200110", 2);
+        ExportTask exportTask = new ExportTask();
         queue.put(exportTask);
 
 //        for (ExportTask task : queue) {

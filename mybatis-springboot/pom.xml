@@ -15,7 +15,7 @@
 	<groupId>com.sk.mybatis</groupId>
 	<artifactId>mybatis-springboot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
+	<name>mybatis-springboot</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

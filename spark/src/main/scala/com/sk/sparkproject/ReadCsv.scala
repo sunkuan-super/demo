@@ -27,11 +27,8 @@ object ReadCsv {
     df.createTempView("tmp2")
 
     spark.sql(
-      """select deptno,salary as over
+      """select EMPNO from tmp2
         |
         |""".stripMargin).show()
-
-
   }
-
 }

@@ -135,7 +135,7 @@ public class ExcelRead {
         FormulaEvaluator formulaEvaluator = new XSSFFormulaEvaluator((XSSFWorkbook) workbook);
 
         int cellType = cell.getCellType();
-        switch (cellType){
+        switch (cellType) {
             case Cell.CELL_TYPE_FORMULA:
 //                String formula = cell.getCellFormula();
 //                System.out.println("计算公式： " + formula);

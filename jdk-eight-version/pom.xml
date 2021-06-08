@@ -15,7 +15,7 @@
 	<groupId>com.sk.jdk8</groupId>
 	<artifactId>jdk-eight-version</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
+	<name>jdk-eight-version</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

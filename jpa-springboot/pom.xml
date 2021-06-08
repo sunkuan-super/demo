@@ -12,7 +12,7 @@
 	<groupId>com.sk.jpa</groupId>
 	<artifactId>jpa-springboot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
+	<name>jpa-springboot</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
