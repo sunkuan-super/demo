@@ -18,7 +18,7 @@ object HiveJDBC {
     Class.forName(driver)
 
     // 获取connection
-    val (url,username,password) = ("jdbc:hive2://bj-hw-8f-18-163:10000/sms2019;principal=hdfs/hdfs@ASPIRE.COM","hdfs@ASPIRE.COM","spark/file/hdfs-5g.keytab")
+    val (url,username,password) = ("jdbc:hive2://sk:10000/ha;principal=hdfs/hdfs@SK.COM","hdfs@SK.COM","spark/file/hdfs-sk.keytab")
 
     println(url)
 

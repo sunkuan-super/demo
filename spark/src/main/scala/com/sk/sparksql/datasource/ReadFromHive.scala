@@ -20,7 +20,7 @@ object ReadFromHive {
       .appName(this.getClass.getCanonicalName.dropRight(1))
       .master("local[*]")
       .enableHiveSupport()
-      .config("hive.metastore.warehouse.dir","thrift://bj-hw-8f-18-163:9083")
+      .config("hive.metastore.warehouse.dir","thrift://localsk:9083")
       .config("spark.sql.warehouse.dir", "/user/hive/warehouse")
       .config(conf)
       .getOrCreate()
@@ -29,7 +29,7 @@ object ReadFromHive {
 
     spark.sql("show databases").show()
 
-    spark.sql("use sms2019").show()
+    spark.sql("use sk").show()
     spark.sql("show tables").show()
 
     spark.sql("select count(1) from up_sms_detail").show()

@@ -1,5 +1,6 @@
 package com.sk.flume;
 
+import org.apache.flume.Context;
 import org.apache.flume.Event;
 import org.apache.flume.interceptor.Interceptor;
 
@@ -37,7 +38,7 @@ public class LogTypeInterceptor implements Interceptor {
 
     @Override
     public List<Event> intercept(List<Event> events) {
-        ArrayList<Event> eventList = new ArrayList<Event>();
+        List<Event> eventList = new ArrayList<Event>();
         for (Event event : events) {
             Event intercept = intercept(event);
             eventList.add(intercept);
@@ -49,7 +50,16 @@ public class LogTypeInterceptor implements Interceptor {
     public void close() {
 
     }
-    public static class Builder Interceptor.Builder{
+    public static class Builder implements Interceptor.Builder{
 
+        @Override
+        public Interceptor build() {
+            return new LogTypeInterceptor();
+        }
+
+        @Override
+        public void configure(Context context) {
+
+        }
     }
 }

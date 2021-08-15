@@ -25,7 +25,7 @@ public class AAA {
     }
 
     public static void main(String[] args) throws IOException {
-        String tableName = "sms2019:test";
+        String tableName = "sk2019:test";
         Connection conn = getConn();
 
         Table table = conn.getTable(TableName.valueOf(tableName));
