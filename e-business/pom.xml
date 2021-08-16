@@ -110,6 +110,12 @@
             <version>1.8.7</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.monitorjbl</groupId>
+            <artifactId>xlsx-streamer</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+
         <!-- spring-boot-starter-amqp 自带这个依赖,可以省略 -->
         <!-- https://mvnrepository.com/artifact/com.rabbitmq/amqp-client -->
         <!--        <dependency>-->
