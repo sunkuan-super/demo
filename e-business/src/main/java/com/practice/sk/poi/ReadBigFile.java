@@ -67,7 +67,7 @@ public class ReadBigFile {
 
         long start = System.currentTimeMillis();
         System.out.println("start :" + System.currentTimeMillis());
-        Workbook workbook = StreamingReader.builder().rowCacheSize(10).bufferSize(1024).open(new File("E:\\Cennavi\\2021-08\\04_交通一张图\\mileage.xlsx"));
+        Workbook workbook = StreamingReader.builder().rowCacheSize(10).bufferSize(1024).open(new File("E:\\Cennavi\\2021-08\\04_交通一张图\\national\\national.xlsx"));
 
         if (workbook == null) {
             return null;

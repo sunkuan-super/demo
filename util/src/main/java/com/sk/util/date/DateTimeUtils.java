@@ -8,6 +8,7 @@ import java.util.Date;
 
 public class DateTimeUtils {
 
+
     /**
      * 日期格式
      */
@@ -16,6 +17,7 @@ public class DateTimeUtils {
             DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"),
             DateTimeFormatter.ofPattern("yyyyMMdd")
     };
+
 
     /**
      * 时区 Asia/Shanghai
@@ -190,7 +192,7 @@ public class DateTimeUtils {
 
 
     /**
-     * LocalDate转LocalDateTime
+     * LocalDate转Time字符串
      *
      * @param localDate LocalDate
      * @return LocalDateTime
@@ -200,6 +202,36 @@ public class DateTimeUtils {
 
         return localDateTime;
     }
+
+
+    /**
+     * long转Date字符串
+     *
+     * @param timestamp
+     * @return
+     */
+    public static String long2StringDate(long timestamp) {
+        LocalDateTime localDateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(timestamp), zoneId);
+        LocalDate localDate = localDateTime.toLocalDate();
+        String stringDate = dtf[0].format(localDate);
+
+        return stringDate;
+    }
+
+
+    /**
+     * long转String
+     *
+     * @param timestamp 时间戳
+     * @return 时间字符串
+     */
+    public static String long2StringTime(long timestamp) {
+        LocalDateTime localDateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(timestamp), zoneId);
+        String stringTime = dtf[1].format(localDateTime);
+
+        return stringTime;
+    }
+
 
     public static void test() {
         DateTimeFormatter ftf1 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -234,18 +266,19 @@ public class DateTimeUtils {
         System.out.println("获取当天结束时间Long型:" + getTodayTimeEndMs());
     }
 
+    public static String getDataTime2(String longTime) {
+        long l = Long.parseLong(longTime);
+
+        LocalDateTime localDateTime = LocalDateTime.ofInstant(Instant.ofEpochSecond(l), ZoneId.systemDefault());
+        System.out.println(localDateTime);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HHmm");
+        String format = formatter.format(localDateTime);
+
+        return format;
+    }
+
     public static void main(String[] args) {
-        // long型的年月日   LocalDate转成时间戳
-        long l = LocalDate.parse("2021-05-20", dtf[0]).atStartOfDay(zoneId).toInstant().toEpochMilli();
-        ZonedDateTime zonedDateTime = LocalDate.parse("2021-05-20", dtf[0]).atStartOfDay(zoneId);
-        System.out.println(zonedDateTime);
-
-        System.out.println(l);
-        Date date = new Date(l);
-        System.out.println(date);
-
-        System.out.println(new Date(1520754566856L));
-        System.out.println("----------------");
-        string2TimeStamps("2021-05-20");
+        long l = System.currentTimeMillis();
+        String dataTime2 = getDataTime2("" + l);
     }
 }

@@ -3,12 +3,10 @@ package com.practice.sk.poi;
 import com.alibaba.excel.util.StringUtils;
 import com.monitorjbl.xlsx.StreamingReader;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.eventusermodel.XSSFReader;
 import org.apache.poi.xssf.model.SharedStringsTable;
-
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator;
 import org.apache.poi.xssf.usermodel.XSSFRichTextString;
@@ -18,7 +16,10 @@ import org.xml.sax.*;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.helpers.XMLReaderFactory;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -317,12 +318,10 @@ public class ExcelRead {
     }
 
     public static void main(String[] args) throws Exception {
-
         ExcelRead example = new ExcelRead();
         example.processFileJDK8();
         System.out.println("开始=" + new Date());
         example.processOneSheet("E:\\Cennavi\\2021-08\\04_交通一张图\\national\\national.xlsx");
         System.out.println("结束=" + new Date());
     }
-
 }
