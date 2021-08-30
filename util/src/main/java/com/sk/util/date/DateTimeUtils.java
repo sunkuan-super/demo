@@ -266,6 +266,7 @@ public class DateTimeUtils {
         System.out.println("获取当天结束时间Long型:" + getTodayTimeEndMs());
     }
 
+
     public static String getDataTime2(String longTime) {
         long l = Long.parseLong(longTime);
 
@@ -276,6 +277,7 @@ public class DateTimeUtils {
 
         return format;
     }
+
 
     public static void main(String[] args) {
         long l = System.currentTimeMillis();
