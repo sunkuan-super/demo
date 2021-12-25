@@ -17,9 +17,10 @@ public class ExcelReadTest extends TestCase {
     @Test
     public void testTestExcelRead() throws IOException {
         ExcelRead excelRead = new ExcelRead();
+        excelRead.testExcelRead();
 //        excelRead.testExcelRead2();
 //        excelRead.testExcelReadFunction();
 
-        excelRead.testExcelBigFile();
+//        excelRead.testExcelBigFile();
     }
 }

@@ -60,6 +60,20 @@ public class ExcelRead {
 
         System.out.println(row.getCell(0).getStringCellValue());
         System.out.println(row.getCell(1).getStringCellValue());
+        System.out.println("-------------------------------");
+        for (int i = 0; i < row.getPhysicalNumberOfCells(); i++) {
+            Row row1 = sheet.getRow(i);
+            int physicalNumberOfCells = row1.getPhysicalNumberOfCells();
+            for (int i1 = 0; i1 < physicalNumberOfCells; i1++) {
+                Cell cell = row1.getCell(i1);
+
+                int cellType = cell.getCellType();
+                if()
+                cell.setCellType(CellType.STRING);
+                String stringCellValue = cell.getStringCellValue();
+                System.out.println(stringCellValue);
+            }
+        }
 
         fileInputStream.close();
 
