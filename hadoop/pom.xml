@@ -21,7 +21,7 @@
     </build>
     <properties>
             <scala.version>2.11</scala.version>
-            <spark.version>2.3.0</spark.version>
+            <spark.version>2.4.7</spark.version>
             <hadoop.version>2.6.0</hadoop.version>
     </properties>
     <dependencies>
